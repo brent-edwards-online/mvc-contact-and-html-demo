@@ -27,8 +27,8 @@ namespace ContactMVC.Repository
             this.Database.Log = sql => Debug.Write(sql);
         }
 
-        public DbSet<BasicEntity> CompetitionEntry { get; set; }
-        
+        public DbSet<Contact> Contacts { get; set; }
+        public DbSet<Address> Addresses { get; set; }
 
         /// <summary>
         /// The on model creating.
@@ -36,9 +36,11 @@ namespace ContactMVC.Repository
         /// <param name="modelBuilder">The model builder.</param>
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            // modelBuilder.Configurations.Add(new Account_UncommissionableMap());
-        }
 
-        public System.Data.Entity.DbSet<ContactMVC.Entities.Contact> Contacts { get; set; }
+            //one-to-many 
+            modelBuilder.Entity<Address>()
+                        .HasRequired<Contact>(c => c.Contact) // Student entity requires Standard 
+                        .WithMany(a => a.Addresses); // Standard entity includes many Students entities
+        }
     }
 }

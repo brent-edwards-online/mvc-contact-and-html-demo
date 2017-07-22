@@ -198,6 +198,7 @@
     <Compile Include="DbContext\IDatabaseFactory.cs" />
     <Compile Include="DbContext\IUnitOfWork.cs" />
     <Compile Include="DbContext\UnitOfWork.cs" />
+    <Compile Include="Entities\Address.cs" />
     <Compile Include="Entities\BasicEntity.cs" />
     <Compile Include="Entities\Contact.cs" />
     <Compile Include="Global.asax.cs">
@@ -214,6 +215,18 @@
     <Compile Include="Migrations\201707220108234_AddHighestQualification.cs" />
     <Compile Include="Migrations\201707220108234_AddHighestQualification.Designer.cs">
       <DependentUpon>201707220108234_AddHighestQualification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707220538550_AddCorrespondenceField.cs" />
+    <Compile Include="Migrations\201707220538550_AddCorrespondenceField.Designer.cs">
+      <DependentUpon>201707220538550_AddCorrespondenceField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707220552510_RenameCorrespondenceField.cs" />
+    <Compile Include="Migrations\201707220552510_RenameCorrespondenceField.Designer.cs">
+      <DependentUpon>201707220552510_RenameCorrespondenceField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707220628370_AddAddressEntity.cs" />
+    <Compile Include="Migrations\201707220628370_AddAddressEntity.Designer.cs">
+      <DependentUpon>201707220628370_AddAddressEntity.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -310,6 +323,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201707220108234_AddHighestQualification.resx">
       <DependentUpon>201707220108234_AddHighestQualification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707220538550_AddCorrespondenceField.resx">
+      <DependentUpon>201707220538550_AddCorrespondenceField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707220552510_RenameCorrespondenceField.resx">
+      <DependentUpon>201707220552510_RenameCorrespondenceField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707220628370_AddAddressEntity.resx">
+      <DependentUpon>201707220628370_AddAddressEntity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

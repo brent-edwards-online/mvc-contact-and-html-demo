@@ -77,10 +77,6 @@
         <div class="form-group">
             @Html.LabelFor(model => model.contact.HighestQualification, "Highest Qualification", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @*
-                    @Html.EditorFor(model => model.contact.HighestQualification, new { htmlAttributes = new { @class = "form-control" } })
-
-                *@
                 <select class="form-control" id="contact.HighestQualification" name="contact.HighestQualification">
                     @foreach (var qualification in Model.Qualifications)
                     {
@@ -98,6 +94,25 @@
                 @Html.ValidationMessageFor(model => model.contact.HighestQualification, "", new { @class = "text-danger" })
             </div>
         </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.contact.CorrespondenceByEmail, "Use email for correspondence?", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*
+                @Html.CheckBoxFor(model => model.contact.CorrespondenceByEmail, new { htmlAttributes = new { @class = "form-control" } })
+                *@
+                
+                <div class="form-check">
+                    <label>
+                        @Html.CheckBoxFor(model => model.contact.CorrespondenceByEmail, htmlAttributes: new { @class = "control-label col-md-4" })
+                        Option 1
+                    </label>
+                </div>
+
+                @Html.ValidationMessageFor(model => model.contact.CorrespondenceByEmail, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

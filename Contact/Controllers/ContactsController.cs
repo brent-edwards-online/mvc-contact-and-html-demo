@@ -55,7 +55,7 @@
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "ContactId,FirstName,LastName,Email,Password,Gender,DOB,Phone,HighestQualification")] Contact contact)
+        public async Task<ActionResult> Create([Bind(Include = "ContactId,FirstName,LastName,Email,Password,Gender,DOB,Phone,HighestQualification,CorrespondenceByEmail")] Contact contact)
         {
             if (ModelState.IsValid)
             {
@@ -94,7 +94,7 @@
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "ContactId,FirstName,LastName,Email,Password,Gender,DOB,Phone,HighestQualification")] Contact contact)
+        public async Task<ActionResult> Edit([Bind(Include = "ContactId,FirstName,LastName,Email,Password,Gender,DOB,Phone,HighestQualification,CorrespondenceByEmail")] Contact contact)
         {
             if (ModelState.IsValid)
             {                

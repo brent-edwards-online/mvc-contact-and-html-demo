@@ -1,10 +1,16 @@
 ﻿namespace ContactMVC.Entities
 {
     using System;
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
     public class Contact
     {
+        public Contact()
+        {
+            Addresses = new List<Address>();
+        }
+
         [Required]
         [Key]
         public int ContactId { get; set; }
@@ -47,5 +53,9 @@
         [StringLength(30, ErrorMessage = "Highest Qualification must be less then 30 characters")]
         [DataType(DataType.Text)]
         public string HighestQualification { get; set; }
+
+        public bool CorrespondenceByEmail { get; set; }
+
+        public virtual ICollection<Address> Addresses { get; set; }
     }
 }

@@ -75,3 +75,6 @@ D:\Development\Git-Repository\mvc-contact-and-html-demo\Contact\obj\Debug\Contac
 D:\Development\Git-Repository\mvc-contact-and-html-demo\Contact\obj\Debug\ContactMVC.csproj.GenerateResource.Cache
 D:\Development\Git-Repository\mvc-contact-and-html-demo\Contact\obj\Debug\ContactMVC.Migrations.UpdateDataTypes.resources
 D:\Development\Git-Repository\mvc-contact-and-html-demo\Contact\obj\Debug\ContactMVC.Migrations.AddHighestQualification.resources
+D:\Development\Git-Repository\mvc-contact-and-html-demo\Contact\obj\Debug\ContactMVC.Migrations.AddCorrespondenceField.resources
+D:\Development\Git-Repository\mvc-contact-and-html-demo\Contact\obj\Debug\ContactMVC.Migrations.RenameCorrespondenceField.resources
+D:\Development\Git-Repository\mvc-contact-and-html-demo\Contact\obj\Debug\ContactMVC.Migrations.AddAddressEntity.resources
