@@ -2,6 +2,8 @@
 {
     using ContactMVC.Entities;
     using ContactMVC.Services;
+    using ContactMVC.ViewModel;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Net;
     using System.Threading.Tasks;
@@ -10,10 +12,12 @@
     public class ContactsController : Controller
     {
         private IContactService _contactService;
+        private IEnumerable<string> _qualifications;
 
         public ContactsController(IContactService contactService)
         {
             _contactService = contactService;
+            _qualifications = _contactService.GetQualifications();
         }
 
         // GET: Contacts
@@ -40,7 +44,10 @@
         // GET: Contacts/Create
         public ActionResult Create()
         {
-            return View();
+            ContactsViewModel model = new ContactsViewModel();
+            model.contact = new Contact();
+            model.qualifications = _qualifications;
+            return View(model);
         }
 
         // POST: Contacts/Create
@@ -48,7 +55,7 @@
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "ContactId,FirstName,LastName,Email,Password,Gender,DOB,Phone")] Contact contact)
+        public async Task<ActionResult> Create([Bind(Include = "ContactId,FirstName,LastName,Email,Password,Gender,DOB,Phone,HighestQualification")] Contact contact)
         {
             if (ModelState.IsValid)
             {
@@ -56,7 +63,10 @@
                 return RedirectToAction("Index");
             }
 
-            return View(contact);
+            ContactsViewModel model = new ContactsViewModel();
+            model.contact = contact;
+            model.qualifications = _qualifications;
+            return View(model);
         }
         
         
@@ -72,7 +82,11 @@
             {
                 return HttpNotFound();
             }
-            return View(contact);
+
+            ContactsViewModel model = new ContactsViewModel();
+            model.contact = contact;
+            model.qualifications = _qualifications;
+            return View(model);
         }
 
         // POST: Contacts/Edit/5
@@ -80,14 +94,17 @@
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "ContactId,FirstName,LastName,Email,Password,Gender,DOB,Phone")] Contact contact)
+        public async Task<ActionResult> Edit([Bind(Include = "ContactId,FirstName,LastName,Email,Password,Gender,DOB,Phone,HighestQualification")] Contact contact)
         {
             if (ModelState.IsValid)
             {                
                 await _contactService.UpdateContactAsync(contact);
                 return RedirectToAction("Index");
             }
-            return View(contact);
+            ContactsViewModel model = new ContactsViewModel();
+            model.contact = contact;
+            model.qualifications = _qualifications;
+            return View(model);
         }
 
         // GET: Contacts/Delete/5

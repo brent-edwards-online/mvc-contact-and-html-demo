@@ -15,5 +15,7 @@
         Task UpdateContactAsync(Contact contact);
 
         Task CreateContactAsync(Contact contact);
+
+        IEnumerable<string> GetQualifications();
     }
 }

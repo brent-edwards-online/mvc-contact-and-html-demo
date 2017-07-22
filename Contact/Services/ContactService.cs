@@ -45,5 +45,10 @@
             _contactRepository.Insert(contact);
             return _unitOfWork.SaveChangesAsync();
         }
+
+        public IEnumerable<string> GetQualifications()
+        {
+            return new string[] { "High School", "Bachelors", "Masters", "Doctorate" };
+        }
     }
 }
