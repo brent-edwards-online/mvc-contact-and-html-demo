@@ -34,7 +34,7 @@
         public string Gender { get; set; }
 
         [Required(ErrorMessage = "DOB is a required field")]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
         [DataType(DataType.Date)]
         public DateTime DOB { get; set; }
 

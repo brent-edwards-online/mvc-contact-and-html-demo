@@ -56,7 +56,10 @@
             @Html.DisplayFor(modelItem => item.Gender)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.DOB)
+            @*
+                @Html.DisplayFor(modelItem => item.DOB)
+            *@
+            @item.DOB.ToShortDateString()
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Phone)
